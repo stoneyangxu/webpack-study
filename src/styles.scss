@@ -1,6 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {font-family: "DuperWeb W03 Italic";
+  src: url("./fonts/32614b2a79096b7abe08dce827de3d8f.eot"); /* IE9*/
+  src: url("./fonts/32614b2a79096b7abe08dce827de3d8f.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("./fonts/32614b2a79096b7abe08dce827de3d8f.woff2") format("woff2"), /* chrome、firefox */
+  url("./fonts/32614b2a79096b7abe08dce827de3d8f.woff") format("woff"), /* chrome、firefox */
+  url("./fonts/32614b2a79096b7abe08dce827de3d8f.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("./fonts/32614b2a79096b7abe08dce827de3d8f.svg#DuperWeb W03 Italic") format("svg"); /* iOS 4.1- */
+}
+
 .hello {
-  color: $red;
-  background-image: url('./tile-wide.png');
+  font-family: 'DuperWeb W03 Italic';
 }
