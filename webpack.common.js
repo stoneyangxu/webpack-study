@@ -5,10 +5,10 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
+    pring: './src/print.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -66,7 +66,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin('./dist'),
     new HtmlWebpackPlugin({
-      title: 'Output Management'      
+      title: 'Output Management'
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // Specify the common bundle's name.
+    })
   ]
 };
