@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print'
+import {cube} from './math'
 
 import './styles.scss';
 import data from './data.xml'
@@ -7,7 +8,7 @@ import data from './data.xml'
 function component() {
   var element = document.createElement('div');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.innerHTML = _.join(['Hello', 'webpack', '5 cubed is equal to ' + cube(5)], ' ');
   element.classList.add('container')
   element.classList.add('hello')
 
