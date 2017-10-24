@@ -1,3 +1,3 @@
 export default function print() {
-  console.log('I am pringting message!!');
+  console.log('Updating print.js...')
 }
