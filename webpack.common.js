@@ -10,11 +10,6 @@ module.exports = {
   entry: {
     app: './src/index.js'
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -69,13 +64,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ManifestPlugin(),
     new CleanWebpackPlugin('./dist'),
     new HtmlWebpackPlugin({
       title: 'Output Management'      
     }),
-    new UglifyJSPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
   ]
 };
