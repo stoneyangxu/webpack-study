@@ -8,10 +8,13 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    pring: './src/print.js'
+    vender: [
+      'lodash'
+    ]
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',    
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -66,10 +69,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin('./dist'),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'Caching'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common' // Specify the common bundle's name.
-    })
+      name: 'vender'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
   ]
 };
